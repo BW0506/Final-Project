@@ -1,0 +1,31 @@
+<html>
+<head>
+     <title>
+     Search Page
+     </title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="index">
+<h1 class="webtitle">Anime Search & Recommendation Engine</h1>
+<img src="{{ url_for('static', filename='images/naruto.jpeg') }}" alt="Naruto" class="naruto">
+<div class="upload">
+    <form action="/results" method="post" enctype="multipart/form-data">
+        <div class="input">
+            <label for="fileInput">Search file</label>
+            <input type="file" id="fileInput" name="file">
+        </div>
+        <div class="input">
+            <label for="urlInput">Search image URL</label>
+            <input type="url" id="urlInput" name="url" placeholder="Enter a URL"><br><br>
+        </div>
+        <label for="blackBorders">Detect Black Borders</label>
+        <input type="checkbox" id="blackBorders" name="blackborder"><br><br>
+        <button type="submit">Search</button>
+    </form>
+</div>
+<footer>
+     Data from <a href="https://soruly.github.io/trace.moe-api/#/">Trace.moe API </a> and
+       <a href="https://anilist.gitbook.io/anilist-apiv2-docs/">Anilist API</a>.
+</footer>
+</body>
+</html>

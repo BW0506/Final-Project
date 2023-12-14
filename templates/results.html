@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Results Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="results">
+    <div class="searchresults">
+        <section id="trace">
+        <h2 class="sResults">Your Search Results</h2>
+        <h3>Anime Scene Video</h3>
+        <video width="500" height="350" controls>
+            <source src="{{ results.video }}" type="video/mp4">
+        </video>
+        <h3>Anime Scene Image</h3>
+        <img src="{{ results.image }}" alt="Anime Image" style="max-width: 320px;">
+        <p><b>Filename:</b> {{ results.filename }}</p>
+        <p><b>Anilist ID:</b> {{ results.anilist }}</p>
+        <p><b>Episode:</b> {{ results.episode }}</p>
+        <p><b>Timeframe:</b> {{ results.from }} to {{ results.to }}</p>
+        <p><b>Similarity:</b> {{ results.similarity }}</p>
+    </section>
+    <aside id="anilist">
+        <h2 class="whatstrending">What is Trending now</h2>
+        {% for anime in anime_data %}
+            <div>
+                <h3>{{ anime.title.english }}</h3>
+                <img src="{{ anime.coverImage.large }}" alt="{{ anime.title.english }}">
+                <p><b>Popularity:</b> {{ anime.popularity }}</p>
+                <p><b>Episodes:</b> {{ anime.episodes }}</p>
+                <p><b>Genre:</b> {{ anime.genres }}</p>
+            </div>
+        {% endfor %}
+    </aside>
+    </div>
+</body>
+</html>
