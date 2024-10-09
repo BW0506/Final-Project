@@ -8,7 +8,7 @@ def identify_input_filetype(input):
     if file_extension.lower() == '.jpg':
         return "image/jpg"
     elif file_extension.lower() == '.jpeg':
-        return "image/jpeg"
+        return "image/jpeg" 
     elif file_extension.lower() == '.png':
         return "image/png"
     elif file_extension.lower() == '.gif':
